@@ -1,12 +1,22 @@
 public class Creado implements EstadoEnvio {
-
+    
+    @Override
     public void avanzarEnvio(Envio envio) {
-        envio.setEstado(new EnTransito);
+        envio.setEstado(new EnTransito());
         System.out.println("El Envio pasa al estado en Transito");
     }
 
+    @Override
     public void cancelarEnvio(Envio envio) {
-        envio.cancelarEnvio(new Cancelado());
-        System.out.println("El envio fue cancelado desde el estado Creado");
+        envio.setEstado(new Cancelado());
+        System.out.println("El envio paso al estado Cancelado luego de su creacion");
     }
+
+    @Override
+    public void setEnvio(Envio envio) {
+        
+    }
+
+
+    
 }
