@@ -3,12 +3,13 @@ public class Envio {
 
     // Una vez que se crea un envio, se le asigna el estado de creado
     public Envio() {
-        this.estado = new Creado();
+        setEstado(new Creado());
     }
 
     // Metodo que permite cambiar el estado del envio al que le corresponda
     public void setEstado(EstadoEnvio estado) {
         this.estado = estado;
+        
     }
 
     // Metodo que permite avanzar al envio al cual corresponda
