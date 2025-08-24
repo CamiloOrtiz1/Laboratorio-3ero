@@ -9,10 +9,4 @@ public class Cancelado implements EstadoEnvio {
     public void cancelarEnvio(Envio envio) {
         System.out.println("El pedido ya fue cancelado");
     }
-
-    @Override
-    public void setEnvio(Envio envio) {   
-    }
-
-    
 }

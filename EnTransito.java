@@ -14,9 +14,4 @@ public class EnTransito implements EstadoEnvio{
         envio.setEstado(new Cancelado());
 
     }
-
-    @Override
-    public void setEnvio(Envio envio) {   
-    }
-    
 }
