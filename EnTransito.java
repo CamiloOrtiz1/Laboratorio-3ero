@@ -2,19 +2,16 @@ public class EnTransito implements EstadoEnvio{
     
     @Override
     public void avanzarEnvio(Envio envio) {
-       System.out.println("El envio fue entregado con exito");
+        //Coloca al envio en estado entregado
+       System.out.println("El envio " + Thread.currentThread().getName() + "EnTransito ---->Entregado");
        envio.setEstado(new Entregado());
     }
 
     @Override
     public void cancelarEnvio(Envio envio) {
-        System.out.println("El envio fue cancelado mientras estaba en el estado EnTransito");
+        //Coloca al envio en estado cancelado
+        System.out.println("El envio " + Thread.currentThread().getName() + "EnTransito ---->Cancelado");
         envio.setEstado(new Cancelado());
 
     }
-
-    @Override
-    public void setEnvio(Envio envio) {   
-    }
-    
 }

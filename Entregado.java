@@ -11,10 +11,4 @@ public class Entregado implements EstadoEnvio{
         //Al querer cancelar un envio no es posible porque ya fue entregado
         System.out.println("El pedido no puede cancelarse porque ya fue entregado");
     }
-
-    @Override
-    public void setEnvio(Envio envio) {
-
-    }
-    
 }

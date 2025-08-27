@@ -11,12 +11,5 @@ public class Creado implements EstadoEnvio {
         envio.setEstado(new Cancelado());
         System.out.println("El envio paso al estado Cancelado luego de su creacion");
     }
-
-    @Override
-    public void setEnvio(Envio envio) {
-        
-    }
-
-
-    
+  
 }

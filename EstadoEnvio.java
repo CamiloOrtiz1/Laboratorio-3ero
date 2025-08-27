@@ -1,8 +1,6 @@
 public interface EstadoEnvio {
     
-    public void avanzarEnvio();
+    public void avanzarEnvio(Envio envio);
 
-    public void cancelarEnvio();
-
-    public void setEnvio(Envio envio);
+    public void cancelarEnvio(Envio envio);
 }
