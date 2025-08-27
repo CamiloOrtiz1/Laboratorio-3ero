@@ -4,7 +4,6 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-import javaapplication1.heapSort;
 
 public class Main {
     public static void main(String[] args) {
