@@ -3,12 +3,12 @@ public class Entregado implements EstadoEnvio{
     @Override
     public void avanzarEnvio(Envio envio) {
         //Como el envio ya fue entregado no se puede seguir avanzando
-       System.out.println("El pedido ya fue entregado por lo tanto finalizo su recorrido");
+        System.out.println("Envio #" + envio.getId() + " - Ya fue Entregado, por lo tanto, finalizo su recorrido");
     }
 
     @Override
     public void cancelarEnvio(Envio envio) {
         //Al querer cancelar un envio no es posible porque ya fue entregado
-        System.out.println("El pedido no puede cancelarse porque ya fue entregado");
+        System.out.println("Envio #" + envio.getId() + " - No puede Cancelarse porque ya fue Entregado");
     }
 }
