@@ -1,17 +1,27 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.*;
 
 public class Main {
     public static void main(String[] args) {
         ExecutorService executor = Executors.newFixedThreadPool(3);
-        
-        Envio envio = new Envio();
-        HiloEnvio tareaEnvio = new HiloEnvio(envio);
+        List<Future<Envio>> futures = new ArrayList<>();
 
-        Future <Envio> future = executor.submit(tareaEnvio);
         try {
-        System.out.println("Estado envio: " + future.get());
-        } catch (InterruptedException | ExecutionException e) {
-            e.printStackTrace();
+            // Creacion de los envios, hilosEnvios y se agregan a la lista de Future
+            for (int i=1; i < 20; i++) {
+                Envio envio = new Envio(i);
+                HiloEnvio tareaEnvio = new HiloEnvio(envio);
+                futures.add(executor.submit(tareaEnvio));
+            }
+
+            for (Future<Envio> future : futures) {
+                try {
+                    System.out.println("Estado Envio: " + future.get().toString());
+                } catch (InterruptedException | ExecutionException e) {
+                    e.printStackTrace();
+                }
+            }
         } finally {
             executor.shutdown();
         }

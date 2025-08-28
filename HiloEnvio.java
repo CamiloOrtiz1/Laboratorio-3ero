@@ -16,11 +16,11 @@ public class HiloEnvio implements Callable<Envio> {
         // Simular aleatoriamente la cancelacion
         if (Math.random() < 0.3) {
             this.envio.cancelarEnvio();
-            System.out.println(Thread.currentThread().getName() + ". Estado actual: " + this.envio.getEstado().getClass().getSimpleName());
+            //System.out.println(this.envio.toString());
         } else {
             this.envio.avanzarEnvio();
             Thread.sleep(1000);
-            System.out.println(Thread.currentThread().getName() + ". Estado actual: " + this.envio.getEstado().getClass().getSimpleName());
+            //System.out.println(this.envio.toString());
             this.envio.avanzarEnvio();
         }
         return envio;
